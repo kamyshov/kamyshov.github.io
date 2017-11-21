@@ -223,7 +223,7 @@
     display: flex;
 }
 .car img{
-    max-width:100%;;
+    max-width:100%;
     height: 100%;
 }
 .battery{
@@ -243,6 +243,7 @@
 
 .cable{
     width: 25%;
+    display: flex;
 }
 .cable img{
     max-width:100%;
@@ -313,28 +314,40 @@
 }
 .technology{
     width: 25%;
+    display: flex;
 }
 .technology img{
-    max-width:100%;;
+    max-width:100%;
     height: 100%;
 }
 @media screen and (max-width: 1060px) {
-    .city__adress div{
+    .city__adress{
         display: block;
         margin-bottom: 10px;
+        padding-left: 0;
     }
     .city{
         width: 130px;
+    }
+    .links{
+        padding-right: 0;
     }
     .logo,
     .subtitles{
         float: none;
     }
-    .static-block{
-        text-align: center;
+    /*.static-block{*/
+        /*text-align: center;*/
+    /*}*/
+    /*.subtitles ul li{*/
+        /*text-align: left;*/
+    /*}*/
+    .nav__services{
+        font-size: 16px;
+        padding-left: 40px;
     }
-    .static-info ul li{
-        text-align: left;
+    .slider__sub{
+        height: 500px;
     }
     .block{
         padding-right: 60px;
@@ -344,16 +357,22 @@
         padding-right: 0;
     }
     .nav li a{
-        padding: 24px 10px 16px;
+        padding: 20px 10px 16px;
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 780px) {
-    .logo{
+   .links{
+       padding-left: 0;
+   }
+    .static-block{
         text-align: center;
-        padding: 0;
     }
+    .logo{
+        padding: 20px 20px 20px 0;
+    }
+
     .navigation-block {
         max-width:100%;
         padding-left: 0;
@@ -361,7 +380,7 @@
     #nav__menu{
         display: none;
         position: absolute;
-        top: 56px;
+        top: 0px;
         left: 0;
         background: #000;
         right: 0;
@@ -369,7 +388,7 @@
     }
     #nav__menu li{
         display: block;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
     #nav__menu li a{
         padding: 15px 10px 10px;
@@ -378,16 +397,37 @@
         display: block;
         margin: 0 auto;
     }
-    .search{
-        display: inline-block;
-    }
     .fa-bars{
         font-size: 25px;
         padding: 25px 25px 25px 0;
     }
+    .slider__sub{
+        background-size: cover;
+    }
+    .headers h1 {
+        font-size: 30px;
+    }
+    .headers h2 {
+        font-size: 27px;
+    }
+    .headers p{
+        font-size: 24px;
+    }
+    .arrows{
+        font-size: 30px;
+    }
     /*.headers{*/
-        /*height: 400px;*/
+        /*align-content: center;*/
     /*}*/
+    .technology img{
+        width: 100%;
+        }
+    .car img{
+        width: 100%;
+    }
+    .cable img{
+        width: 100%;
+    }
     .drop1{
         width: 50%;
     }
@@ -396,7 +436,12 @@
     }
     .drop2{
         width: 100%;
+        height: 450px;
     }
+    .drop2 h1{
+        font-size: 30px;
+    }
+
 }
 
 @media screen and (max-width: 620px) {
@@ -406,33 +451,84 @@
         padding: 0;
         border: none;
     }
-    .address-block{
-        width: 40%;
-    }
     .block {
         padding-right: 40px;
         padding-left: 40px;
     }
+    .headers h1 {
+        font-size: 26px;
+    }
+    .headers h2 {
+        font-size: 23px;
+    }
+    .headers p{
+        font-size: 21px;
+    }
+    .arrows{
+        font-size: 30px;
+    }
+    .drop2{
+        height: 300px;
+    }
+
 }
 
 @media screen and (max-width: 420px) {
+    .city__adress {
+        float: none;
+        width: 100%;
+        padding: 30px 10px 40px 0;
+    }
     .logo img{
         width: 100%;
         height: auto;
     }
-    /*.city__adress,*/
-    /*.links{*/
-        /*float: none;*/
-        /*width: 100%;*/
-    /*}*/
-    /*.location{*/
-        /*text-align: center;*/
-    /*}*/
-    .city__address .city{
-        margin: 0 auto 10px;
+
+    .drop2{
+        height: 200px;
+    }
+    .drop2 h1{
+        font-size: 22px;
+    }
+    .drop2 p{
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 390px) {
-
+    .city__adress{
+        padding-top: 10px;
+    }
+    .location{
+        text-align: center;
+    }
+    .links{
+        padding-right: 50px;
+    }
+    .fa-bars,
+    .search {
+        font-size: 20px;
+    }
+    .slider__sub{
+        background-size: cover;
+        height: 300px;
+    }
+    .headers h1 {
+        font-size: 14px;
+    }
+    .headers h2 {
+        font-size: 14px;
+    }
+    .headers p{
+        font-size: 14px;
+    }
+    .arrows{
+        font-size: 26px;
+    }
+    .drop2 h1{
+        font-size: 18px;
+    }
+    .drop2 p{
+        font-size: 10px;
+    }
 }
