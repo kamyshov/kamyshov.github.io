@@ -1,90 +1,427 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+@charset "UTF-8";
+body {
+  transition: all 0.5s;
 }
-.clearfix:after,
-.clearfix:before{
-    display: table;
-    content: '';
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }
-.clearfix:after{
-    clear: both;
+.container:after {
+  content: '';
+  clear: both;
+  display: table;
 }
-.promo {
-     background: black;
-     color:white;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     max-width: 80%;
-     height: 65px;
-     font-size: 25px ;
- }
-.promo_bar {
-    text-align: center;
-    width: 100%;
-    padding-left: 30px;
+.title {
+    background: rgba(136, 208, 255, 0.62);
+  font-size: 32px;
+  text-transform: capitalize;
+  text-align: center;
+  border-bottom: 1px solid #c2c2c2;
+  padding: 20px 0;
+  font-family: fantasy;
+  font-weight: 400;
 }
-.cross{
-    text-align: center;
-    padding-right: 30px;
-}
-.header_block{
-    background:url("../img/man_layer.png") no-repeat, url("../img/man.png")  center/cover no-repeat;
-    height: 900px;
-    max-width: 100%;
+.search-block {
+    display: inline-block;
+    width: 70%;
+    font-size: 0;
 
+    padding: 20px;
+    text-align: start;
 }
-.navigation-block{
-    background: rgba(130, 182, 224, 0.73);
-    max-width: 100%;
-    max-height: 85px;
+.search {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid #c2c2c2;
+  border-right: none;
+  font-size: 16px;
+  padding: 10px 0 10px 20px;
+  outline: none;
 }
-.logo{
-    float: left;
-    padding: 10px 10px 10px 100px;
-    border-right: 2px solid black;
-}
-.usa{
-    float: left;
+.add-block {
+    display: inline-block;
     padding: 20px;
 }
-.nav_menu{
-    float: left;
+.add-btn {
+  font-size: 16px;
+  color: #ccc;
+  border-radius: 20px;
+  border: 1px solid #c2c2c2;
+  padding: 10px 20px;
+  transition: all 0.5s;
+}
+.add-btn:hover {
+  background: rgba(194,194,194,0.5);
+  border: 1px solid rgba(194,194,194,0.3);
+  color: #fff;
+}
+.add-form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50vw;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #c2c2c2;
+  padding: 30px 30px 50px;
+  text-align: left;
+  display: none;
+  z-index: 5;
+  min-width: 320px;
+}
+.add-form h2 {
+  margin: 0 0 30px 0;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.add-form input {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #c2c2c2;
+  padding: 10px 20px;
+  margin: 0 0 20px 0;
+  outline: none;
+}
+.add-form .phone-field,
+.add-form .email-field {
+  width: 90%;
+  margin: 10px 0 5px 0;
+}
+.add-phone-btn,
+.add-email-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+}
+.add-form-btn,
+.cancel-btn
+ {
     display: inline-block;
+  width: 46%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px 8px 0;
+  outline: none;
+  background: #33e5af;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.64);
+  letter-spacing: 2px;
+  transition: all 0.5s;
 }
-.nav_menu ul li{
-    display: inline ;
+.add-form-btn:hover,
+.cancel-btn:hover {
+  background: #33e5af;
 }
-.nav_menu ul li a{
-    text-align: center;
-    text-decoration: none;
-    color: white;
+.phoneListItem {
+ position: inherit;
+  border-bottom: 1px solid #c2c2c2;
+  padding: 10px 10px;
+  margin: 0 0 10px 2%;
+  width: 80%;
 }
-.shoping{
-    float: right;
-    display: inline-block;
-}
-.sweat_block{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    height: 825px;
-}
+.phoneListItem .removeButton {
+    position: inherit;
+    width: 35px;
+    height: 35px;
 
-.sweat_block h1{
-    font-family: Brushstrike ;
-    font-size: 130px;
-    color: white;
-    text-decoration: none;
 }
-.sweat_block h2{
-    font-family: BebasNeue_Book;
-    color: white;
-    font-size: 40px;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 4;
+  display: none;
 }
-.carets{
-    align-self: flex-end;
+.contactsBookItem {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid #c2c2c2;
+}
+.contactsBookItem:hover {
+  background-color: rgba(190,190,190,0.3);
+}
+.contactsBookItem .outter-input-firstname {
+  font-size: 18px;
+  display: block;
+  text-transform: capitalize;
+}
+.contactsBookItem .outter-input-firstname:disabled {
+  background: none;
+  border: none;
+}
+.contactsBookItem .edit-button,
+.contactsBookItem .removeButton {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 7%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  transition: opacity 0.4s;
+}
+.contactsBookItem .edit-button:hover,
+.contactsBookItem .removeButton:hover {
+  opacity: 0.7;
+}
+.contactsBookItem .removeButton {
+  right: 2%;
+}
+.details {
+  display: none;
+  position: fixed;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #c2c2c2;
+  padding: 30px 50px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 250px;
+  background-size: 250px 300px;
+  z-index: 10;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.details h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+}
+.details input {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #000;
+    background: rgba(71, 251, 231, 0.08);
+}
+.details p {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+.details .editPhoneButton {
+  width: 35px;
+  height: 35px;
+}
+.details .phones-box {
+  position: relative;
+}
+.details .removePhone {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  right: 2%;
+}
+.details .addPhoneButton {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.save-button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #65efce;
+  border: 1px solid #000;
+  color: #6f8eff;
+  margin: 20px 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: background 0.5s;
+}
+.save-button:hover {
+  background: rgba(0,0,0,0.3);
+}
+.close-btn {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 13px;
+  right: 17px;
+  cursor: pointer;
+}
+.close-btn .l1 {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background: #000;
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 50%;
+}
+.close-btn .l2 {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background: #000;
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+}
+.empty {
+  color: #f00;
+  margin: 0 0 2% 2%;
+  display: none;
+}
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 15px;
+  background: #65efce;
+  border: 1px solid #000;
+  color: #6f8eff;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+}
+html {
+  height: 100%;
+}
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h5,
+p {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #3070d1;
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}
+select {
+  cursor: pointer;
+}
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+input[type=submit] {
+  cursor: pointer;
+}
+em,
+strong {
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: middle;
+}
+strong {
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-weight: 600;
+}
+h1,
+h2,
+h5 {
+  font-weight: 600;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+h4 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  color: #000;
+  font-size: 18px;
+  min-width: 320px;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media (max-width: 1024px) {
+  .add-form,
+  .details {
+    width: 90vw;
+  }
+}
+@media (max-width: 630px) {
+  .search-block{
+      display: block;
+      text-align: center;
+      width: 100%;
+  }
+    .search {
+    width: 80%;
+  }
+  .search-btn {
+    width: 20%;
+  }
+  .add-block{
+      display: block;
+      width: 100%;
+      text-align: center;
+  }
+  .add-form-btn,
+  .cancel-btn {
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 20px 0;
+  }
+  .add-form .phone-field,
+  .add-form .email-field {
+    width: 80%;
+  }
+  .contactsBookItem .edit-button {
+    right: 12%;
+  }
+  .removeButton {
+    right: 2%;
+  }
 }

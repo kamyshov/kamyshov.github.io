@@ -1,66 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="fonts/Brushstrike.ttf">
-    <link rel="stylesheet" href="fonts/BebasNeue_Book.ttf">
-    <title>No-Sweat-home</title>
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Phone Book</title>
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<header>
+	<div class="container">
+		<h1 class="title">Phonebook</h1>
 
-    <div class="promo">
-        <div class="promo_bar">
-            <p>THIS IS WHERE THE PROMO BAR WILL APPEAR</p>
-        </div>
-        <div class="cross">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-    </div>
-    <div class="header_block">
-    <div class="navigation-block clearfix">
-        <div class="logo">
-            <img src="img/logo.png">
-        </div>
-        <div class="usa">
-            <img src="img/100%25.png">
-        </div>
-        <div class="nav_menu">
-            <nav>
-                <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">ABOUT US</a></li>
-                <li><a href="">HOW IT WORKS</a></li>
-                <li><a href="">SHOP NOW</a></li>
-                </ul>
-            </nav>
-        </div>
-            <div class="shoping">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </div>
+		<div class="search-block">
+			<input type="search" name="search" id="search" class="search" placeholder="Search...">
+		</div>
 
-    </div>
-        <div class="sweat_block">
-            <!--<div class="tegline">-->
-                <h1>SWEAT ABSORBING</h1>
-                <h2>DISPOSABLE HAT AND HELMET LINERS</h2>
-            <!--</div>-->
-        <!--<div class="carets">-->
-            <i class="fa fa-caret-left" aria-hidden="true"></i>
-            <i class="fa fa-caret-right" aria-hidden="true"></i>
-        <!--</div>-->
-    </div>
-    </div>
-</header>
-<main>
-    <div class="feauters">
-        <p id="tech"></p>
-    </div>
-</main>
+		<div class="add-block">
+			<button type="button" id="openForm-btn" class="add-btn">Add Contact</button>
+		</div>
+
+		<form class="add-form" id="contactsForm">
+
+			<h2>Enter following information</h2>
+			<div class="empty">Fill all empty fields</div>
+			<input type="text" id="firstName" class="formFields" placeholder="Name*">
+			<input type="text" id="lastName" class="formFields" placeholder="Surname*">
+			<input type="number" class="phone-field formFields" id="phone-input" placeholder="Phone Number*">
+			<button type="button" class="add-phone-btn" id="add-phone-btn"><img src="img/plus.png"></button>
+			<ul id="phonesList" class="phoneList">
+				<!-- <li class="phoneListItem"> <button type="button" class="removeButton"><img src="img/remove.png" alt="remove"></button></li> -->
+			</ul>
+			<input type="text" class="email-field formFields" placeholder="Email*" id="email">
+			<button type="button" class="add-form-btn" id="add-form-btn">Save</button>
+			<button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
+		</form>
+		<div class="contacts-book">
+			<!-- <div class="contactsBookItem">
+				<button type="button" class="edit-button"><img src="img/edit.png" alt="editButton"></button>
+				<button type="button" class="removeButton"><img src="img/remove.png" alt="remove"></button>
+				<div class="details">
+					<h3>Edit information</h3>
+					<div class="close-btn">
+						<div class="l1"></div>
+						<div class="l2"></div>
+					</div>
+					<input type="text">
+					<input type="text">
+					<input type="text">
+						<input type="text">
+					<button type="button" class="save-button"><img src="save.png" alt="save"></button>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div id="backdrop" class="backdrop"></div>
+	<script src="js/script.js"></script>
 </body>
 </html>
